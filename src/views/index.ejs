@@ -15,6 +15,9 @@
     <!-- CSS -->
     <link rel="stylesheet" href="/css/index.css" />
 
+    <!-- JS -->
+    <script defer src="/js/index.js"></script>
+
     <!-- Page Title -->
     <title>Emitter</title>
   </head>
@@ -25,13 +28,18 @@
     <!-- Page Contents -->
     <section class="io-section">
       <!-- Submitter Form -->
-      <form class="form">
-        <input type="text" placeholder="https://...." class="entry" />
+      <form class="form" id="form">
+        <input
+          type="url"
+          placeholder="https://...."
+          required
+          id="input"
+          class="entry" />
         <button type="submit" class="btn">Shorten</button>
       </form>
 
       <!-- Output Area -->
-      <button class="output">COPY</button>
+      <button id="output" class="output" data-short-url="">COPY</button>
     </section>
   </body>
 </html>

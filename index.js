@@ -10,8 +10,9 @@ const port = process.env.PORT;
 // Initializing Root Express App.
 const App = express();
 
-// Setting Up Static Files.
+// Setting Up Middlewares.
 App.use(express.static("./src/public"));
+App.use(express.json());
 
 // Setting up EJS.
 App.set("views", "./src/views");
