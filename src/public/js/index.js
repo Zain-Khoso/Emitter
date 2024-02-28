@@ -25,8 +25,8 @@ const getShortURL = async function (event) {
 
     const data = await res.json();
 
-    elem_OutputButton.dataset.shortUrl = data.shortened;
-    elem_OutputButton.textContent = data.shortened;
+    elem_OutputButton.dataset.shortUrl = data.shortURL;
+    elem_OutputButton.textContent = data.shortURL;
   } catch {
     location.reload();
   }
