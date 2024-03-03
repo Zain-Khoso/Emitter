@@ -1,6 +1,9 @@
-// Imports
+// Eternal
 import { configDotenv } from "dotenv";
 import express from "express";
+import { connect } from "mongoose";
+
+// Local
 import api from "./src/routes/api.js";
 
 // Reading Environment Variables.
@@ -24,4 +27,9 @@ App.use(api);
 // Serving the static page.
 App.get("/", (_, res) => res.render("index"));
 
-App.listen(port);
+// Connecting to MongoDB and only then starting the server.
+(async function () {
+  await connect("mongodb://localhost:27017/emitter");
+
+  App.listen(port);
+})();
